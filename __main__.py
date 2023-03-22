@@ -6,10 +6,11 @@
 # Using In-memory database
 
 
-from bookMyTaxi import cli, __app_name__
+from bookMyTaxi import myTaxiCli, __app_name__
 
 def main():
-    cli.app(prog_name=__app_name__)
+    print(__app_name__)
+    myTaxiCli.app(prog_name=__app_name__)
 
 if __name__ == "__main__":
     main()
