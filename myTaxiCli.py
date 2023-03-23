@@ -13,10 +13,10 @@ def init(
         str(database.DEFAULT_DB_FILE_PATH),
         "--db-path",
         "-db",
-        prompt="to-do database location?",
+        prompt="database location?",
     ),
 ) -> None:
-    """Initialize the to-do database."""
+    """Initialize the database."""
     app_init_error = config.init_app(db_path)
     if app_init_error:
         typer.secho(
@@ -32,7 +32,7 @@ def init(
         )
         raise typer.Exit(1)
     else:
-        typer.secho(f"The to-do database is {db_path}", fg=typer.colors.GREEN)
+        typer.secho(f"The database is {db_path}", fg=typer.colors.GREEN)
 
 
 def _version_callback(value: bool) -> None:

@@ -21,3 +21,44 @@ def init_database(db_path: Path) -> int:
         return SUCCESS
     except OSError:
         return DB_WRITE_ERROR
+    
+
+# ?? this should be better off a interface ??  
+class StorageService :
+    
+    def saveRider(rider)->bool:
+        pass
+    
+    def saveDriver( driver)->bool:
+        pass
+    
+    def saveVehicle( vehicle)->bool:
+        pass
+    
+    def updateLocation( vehicle)->bool:
+        pass
+    
+    def book( booking)->bool:
+        pass
+    
+    def find( lat,  lon,  maxDistance)->Vehicle:
+        pass
+    
+    def rideHistory(riderUserId):
+        pass
+    
+    def endTrip(timeStamp, bookingId)->bool:
+        pass
+    
+    def deleteRider():
+        pass
+    
+    def deleteDriver():
+        pass
+    
+    def deleteVehicle():
+        pass
+    
+    def deleteBooking():
+        pass
+    
