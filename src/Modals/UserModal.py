@@ -11,14 +11,15 @@ class UserInfo:
         
                  
 class Rider(UserInfo):
-    super().__inti__(self,username,id,password,phone,email,type=UserType.RIDER)
+    super().__inti__(self,username,id,password,phone,email,type=UserType.RIDER,riderRideHistory=[])
     self.riderRideHistory=riderRideHistory
     
     
     
     
 class Driver(UserInfo):
-        super().__inti__(self,username,id,password,phone,email,type=UserType.DRIVER)
+        super().__inti__(self,username,id,password,phone,email,type=UserType.DRIVER,driverRideHistory=[])
         self.driverRideHistory=driverRideHistory
+        
         
   

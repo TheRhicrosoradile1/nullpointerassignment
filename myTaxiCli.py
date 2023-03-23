@@ -2,9 +2,14 @@ from pathlib import Path
 from typing import Optional
 
 import typer
+from Database.database import StorageService
+from Enums.enums import UserType
+from Modals.UserModal import Driver, Rider
 
 from bookMyTaxi import ERRORS, __app_name__, __version__, config
 from bookMyTaxi.src.Database import database
+
+store = StorageService
 
 app = typer.Typer()
 
@@ -12,7 +17,54 @@ app = typer.Typer()
 def RegisterNewDriver():
     typer.secho("Starting Registering process for the driver...")
     
-    pass
+    username=input("Enter driver name")
+    # TODO: set this up in DB
+    id=input("Enter id")
+    email=input("Enter email address")
+    password=input("Enter password")
+    phone=input("Enter phone number")
+    newDriver = Driver(username,id,password,phone,email)
+    # wantsToRegisterVehicle = input("Would you like to register a vehicle")
+    
+    # TODO: improve this error handelling
+    try:
+        store.saveDriver(newDriver)
+        
+        # if(wantsToRegisterVehicle):
+        #     typer.secho("Enter your vehicle ID for existing registered vehicle or first register your vehicle details to register ....")
+        #     vehicleId = input("Enter vehicle ID")
+        #     # TODO: search the vehicle id in db, if exist?add this to driver : prompt and exit
+        #     try:
+        #        
+        #         pass
+            
+        #     except:
+        #         typer.secho("Register driver failed while adding vehicle please try again ... aborting...")
+        # else:
+        typer.secho("Successfully registered new driver without vehicle")    
+    except:
+        typer.secho("registering new driver failed with some error ")
+
+
+@app.command()
+def RegisterNewRider():
+    typer.secho("Starting Registering process for the Rider...")
+    
+    username=input("Enter rider name")
+    # TODO: set this up in DB
+    id=input("Enter id")
+    email=input("Enter email address")
+    password=input("Enter password")
+    phone=input("Enter phone number")
+    newRider = Rider(username,id,password,phone,email)
+    
+    # TODO: improve this error handelling
+    try:
+        store.saveDriver(newRider)
+        typer.secho("Successfully registered new Rider")
+    except:
+        typer.secho("registering new driver failed with some error ")
+    
 
 @app.command()
 def init(
