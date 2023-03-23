@@ -1,7 +1,7 @@
 # bookMyTaxi/__init__.py
 
 __app_name__ = "bookMyTaxi"
-__version__ = "0.1.0"
+__version__  = "0.1.0"
 
 (
     SUCCESS,

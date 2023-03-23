@@ -3,9 +3,16 @@ from typing import Optional
 
 import typer
 
-from bookMyTaxi import ERRORS, __app_name__, __version__, config, database
+from bookMyTaxi import ERRORS, __app_name__, __version__, config
+from bookMyTaxi.src.Database import database
 
 app = typer.Typer()
+
+@app.command()
+def RegisterNewDriver():
+    typer.secho("Starting Registering process for the driver...")
+    
+    pass
 
 @app.command()
 def init(
@@ -52,3 +59,4 @@ def main(
     )
 ) -> None:
     return
+

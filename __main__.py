@@ -6,7 +6,7 @@
 # Using In-memory database
 
 
-from bookMyTaxi import Rider, Vehicle, myTaxiCli, __app_name__
+from bookMyTaxi import myTaxiCli, __app_name__
 
 def main():
     print(__app_name__)

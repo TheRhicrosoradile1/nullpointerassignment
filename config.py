@@ -4,7 +4,7 @@ from pathlib import Path
 import typer
 
 from bookMyTaxi import (
-    DB_WRITE_ERROR, DIR_ERROR, FILE_ERROR, SUCCESS, __app_name_
+    DB_WRITE_ERROR, DIR_ERROR, FILE_ERROR, SUCCESS, __app_name__
 )
 
 # TODO: change the config dir path to match the current config dir
